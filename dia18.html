@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feliz Dia 18</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       background-color: red;
-      margin: 0;
-      padding: 0;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       overflow-x: hidden;
     }
 
     .painel {
-      margin: 40px auto;
       background-color: white;
-      max-width: 90%;
-      width: 500px;
       border-radius: 20px;
-      text-align: center;
       padding: 30px 20px;
+      max-width: 500px;
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
       position: relative;
     }
 
@@ -34,12 +33,14 @@
       max-width: 50%;
       height: auto;
       border-radius: 10px;
+      margin: 20px 0;
     }
 
     .botoes {
       display: flex;
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
       margin-top: 20px;
     }
 
@@ -56,11 +57,7 @@
       z-index: 1;
     }
 
-    @media (max-width: 600px) {
-      .painel {
-        padding: 20px 10px;
-      }
-
+    @media (max-width: 480px) {
       #sim, #nao {
         width: 70px;
         height: 35px;
@@ -68,8 +65,8 @@
       }
 
       .botoes {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 15px;
       }
     }
   </style>
@@ -85,7 +82,7 @@
 
     <div class="botoes">
       <a href="carta.html"><button id="sim">Sim!</button></a>
-      <button onmouseover="fuja()" id="nao">Não!</button>
+      <button id="nao" onmouseover="fuja()">Não!</button>
     </div>
   </div>
 
@@ -101,7 +98,7 @@
       const aleatorioX = Math.floor(Math.random() * maxX);
       const aleatorioY = Math.floor(Math.random() * maxY);
 
-      botaoNao.style.position = "fixed"; // Muda para fixo para poder mover em qualquer parte da tela
+      botaoNao.style.position = "fixed"; // Permite mover em qualquer parte da tela
       botaoNao.style.left = aleatorioX + "px";
       botaoNao.style.top = aleatorioY + "px";
     }
